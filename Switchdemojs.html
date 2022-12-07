@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo of Switch statement</title>
+    <style>
+        body{
+            background-color: azure;
+            margin-left:100px;
+            margin-right:100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header style="text-align: center;">
+            <h1 >The Switch Statement</h1>
+        </header>
+    </div>
+    <hr>
+    <form action="" id="form1">
+        <div>
+            <ul><li>IN:INDIA</li>
+                <li>US:USA</li>
+                <li>UK:UNITED KINGDOM</li>
+                <li>CA:CANADA</li>
+            </ul>
+           <p>Select Your State:<select id="city" onchange="favCity()">
+            <option value="Delhi">Delhi</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Mumbai">Mumbai</option>
+           </select></p> 
+           <p> Your selected City is:   
+            <input type = "text" id = "favourite" size = "20"> </p>  
+        </div>
+    <p>Enter Country Code:<input type="text" placeholder="Enter country code" id="ccode"></p>
+    <p>
+        <input type="button" value="Click me!" onclick="Demo()">
+    </p>
+</form>
+    <script>
+        function favCity() {  
+            var mylist = document.getElementById("city");  
+            document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;  
+            }  
+        function Demo(){
+         //var countrycode=prompt("Enter Counrty code:IN:INDIA,US:USA,UK:UNITED KINGDOM,CA:Canada");
+         var countrycode=form1.ccode.value;
+         switch(countrycode){
+            case 'IN':
+            alert("India");
+            break;
+            case 'US':
+            alert("United State Of America");
+            break;
+            case 'UK':
+            alert("United Kingdom");
+            break;
+            case 'CA':
+            alert("Canada");
+            break;
+            default:
+            alert("Invalid Option!");
+            break;
+         }
+        }
+    </script>
+   
+</body>
+</html>
